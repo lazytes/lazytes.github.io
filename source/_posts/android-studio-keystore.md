@@ -1,5 +1,12 @@
 ﻿---
 title: Android Studio 保存打包签名配置
+date: 2017-5-18
+categories:
+		- Android
+		- Gradle
+tags:
+	- Android
+	- Gradle
 ---
 
 ### 新建配置文件

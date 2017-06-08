@@ -1,5 +1,9 @@
 ﻿---
 title: android-architecture-todo-mvvm-databinding学习笔记
+date: 2017-4-24
+categories: Android
+tags:
+	- Android
 ---
 项目源码地址：[android-architecture-todo-mvvm-databinding](https://github.com/googlesamples/android-architecture/tree/todo-mvvm-databinding/)
 ### TasksActivity

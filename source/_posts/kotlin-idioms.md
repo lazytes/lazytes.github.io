@@ -1,5 +1,9 @@
 ﻿---
 title: Kotlin习惯用语
+date: 2017-6-8
+categories: Kotlin
+tags: 
+	- Kotlin
 ---
 
 ### 创建DTOs(POJOs/POCOs)

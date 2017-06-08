@@ -1,5 +1,9 @@
 ﻿---
 title: Hello, Kotlin!
+date: 2017-6-7
+categories: Kotlin
+tags: 
+	- Kotlin
 ---
 
 ### Packages的定义
