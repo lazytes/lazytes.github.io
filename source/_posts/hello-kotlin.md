@@ -2,7 +2,7 @@
 title: Hello, Kotlin!
 ---
 
-### 1. Packages的定义
+### Packages的定义
 在源文件的顶端声明: 
 ```
 package my.demo
@@ -10,7 +10,7 @@ package my.demo
 import java.util.*
 ```
 **注意：Kotlin与Java不同，声明`package my.demo`的文件在Java中必须放在`my.demo`包下，在Kotlin中可以放在任意包下**
-### 2. Fuctions的定义
+### Fuctions的定义
 拥有2个Int参数且返回值为Int的方法:
 ```
 fun sum(a: Int,b: Int): Int {
@@ -34,7 +34,7 @@ fun sum(a: Int,b: Int) {
     println("sum of $a and $b is ${a + b}");
 }
 ```
-### 3. 本地变量的定义
+### 本地变量的定义
 只读变量:
 ```
 val a: Int = 1
@@ -47,9 +47,9 @@ c = 3           // 结合上面一行, 这种写法必须在方法里面，外�
 var x = 5
 x += 1
 ```
-### 4. 注释
+### 注释
 支持Java相同的注释,**Kotlin的注释块(/\* \*/)是可以嵌套的**
-### 5. 使用字符串模板
+### 使用字符串模板
 ```
 var a = 1
 val s1 = "a is $a" // 最简单的用法
@@ -57,7 +57,7 @@ val s1 = "a is $a" // 最简单的用法
 a = 2
 val s2 = "${s1.replace("is","was")}, but now is $a" // 使用表达式
 ```
-### 6. 使用条件表达式
+### 使用条件表达式
 ```
 fun maxOf(a: Int,b: Int): Int {
     if (a > b){
@@ -71,7 +71,7 @@ fun maxOf(a: Int,b: Int): Int {
 ```
 fun maxOf(a: Int,b: Int) = if (a > b) a else b
 ```
-### 7. 使用可能为null的值并检查是否为null
+### 使用可能为null的值并检查是否为null
 定义一个方法, 如果不能转换成Integer就返回null:
 ```
 fun parseInt(str: String): Int? {
@@ -91,7 +91,7 @@ fun printProduction(arg1: String, arg2: String) {
     else println("either ‘$arg1’ or '$arg2' is a number")
 }
 ```
-### 8. 使用类型检查和自动转换
+### 使用类型检查和自动转换
 **is**等价Java的**instanceof**:
 ```
 fun getStringLength(obj: Any): Int? {
@@ -108,7 +108,7 @@ fun getStringLength(obj: Any): Int? {
     return obj.length
 }
 ```
-### 9. 使用for循环
+### 使用for循环
 ```
 val items = listOf("apple", "banana", "kiwi")
 for (item in items) println(item)
@@ -118,7 +118,7 @@ for (item in items) println(item)
 val items = listOf("apple", "banana", "kiwi")
 for (index in items.indices) println("item at $index is ${items[index]}")
 ```
-### 10. 使用while循环
+### 使用while循环
 ```
 val items = listOf("apple", "banana", "kiwi")
 var index = 0
@@ -127,7 +127,7 @@ while (index < items.size) {
     index++
 }
 ```
-### 11. 使用when表达式
+### 使用when表达式
 ```
 fun describe(obj: Any): String =
 when (obj) { // 吐槽: 在这里idea的缩进真难看
@@ -138,7 +138,7 @@ when (obj) { // 吐槽: 在这里idea的缩进真难看
     else        ->"Unknown"
 }
 ```
-### 12. 使用ranges(不知道怎么翻比较好)
+### 使用ranges(不知道怎么翻比较好)
 使用**in**操作符判断数字是否在一个范围之内:
 ```
 val x = 10
@@ -172,7 +172,7 @@ for (x in 1..10 step 2) print(x) // 从1开始每次增加2直到10
  */
 for (x in 9 downTo 0 step 3) print(x) // 从9开始每次减少3直到0
 ```
-### 13. 使用集合
+### 使用集合
 迭代一个集合:
 ```
 val items = listOf("apple", "banana", "kiwi")

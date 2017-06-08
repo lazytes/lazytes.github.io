@@ -2,15 +2,15 @@
 title: android-architecture-todo-mvvm-databinding学习笔记
 ---
 项目源码地址：[android-architecture-todo-mvvm-databinding](https://github.com/googlesamples/android-architecture/tree/todo-mvvm-databinding/)
-### 1. TasksActivity
+### TasksActivity
 根据`AndroidManifest.xml`得知
 ```android
 com.example.android.architecture.blueprints.todoapp.tasks.TasksActivity
 ```
 为启动界面。
-#### 1. implements
+#### implements
 该`Activity`实现了2个接口`TaskItemNavigator`和`TasksNavigator`,分别为查看TO-DO详情和增加TO-DO。实现方式也很简单，启动对应的`Activity`并在`onActivityResult`中处理。
-#### 2. onCreate
+#### onCreate
 `onCreate`中调用了多个方法：
 
 *   `setupToolbar()` 初始化标题栏，Pass
@@ -20,12 +20,12 @@ com.example.android.architecture.blueprints.todoapp.tasks.TasksActivity
 *   `mViewModel.setNavigator(this);` 将点击事件和实现接口绑定,具体的在`TasksFragment`部分分析.
 *   `tasksFragment.setViewModel(mViewModel);` 将`ViewModel`与`Fragment`的布局绑定起来。
 
-#### 3. onDestroy
+#### onDestroy
 清除了`ViewModel`层持有的当前`Activity`的引用以防内存泄漏
  
-### 2. TasksFragment
-#### 1. onActivityCreated
-#### 2. onCreateView
+### TasksFragment
+#### onActivityCreated
+#### onCreateView
 ```android
 mTasksFragBinding = TasksFragBinding.inflate(inflater, container, false);
 ```
@@ -51,4 +51,4 @@ mTasksFragBinding.setView(this);
 mTasksFragBinding.setViewmodel(mTasksViewModel);
 ```
 `setHasOptionsMenu(true);` 设置显示菜单。对应的实现方法为`onCreateOptionsMenu`和`onOptionsItemSelected`。
-###暂停
+### 暂停
