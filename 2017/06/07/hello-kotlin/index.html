@@ -1,0 +1,774 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Kotlin," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Packages的定义在源文件的顶端声明:123package my.demoimport java.util.* 注意：Kotlin与Java不同，声明package my.demo的文件在Java中必须放在my.demo包下，在Kotlin中可以放在任意包下 Fuctions的定义拥有2个Int参数且返回值为Int的方法:123fun sum(a: Int,b: Int): Int &amp;#123">
+<meta name="keywords" content="Kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello, Kotlin!">
+<meta property="og:url" content="http://yoursite.com/2017/06/07/hello-kotlin/index.html">
+<meta property="og:site_name" content="没想好">
+<meta property="og:description" content="Packages的定义在源文件的顶端声明:123package my.demoimport java.util.* 注意：Kotlin与Java不同，声明package my.demo的文件在Java中必须放在my.demo包下，在Kotlin中可以放在任意包下 Fuctions的定义拥有2个Int参数且返回值为Int的方法:123fun sum(a: Int,b: Int): Int &amp;#123">
+<meta property="og:updated_time" content="2017-06-08T11:32:27.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hello, Kotlin!">
+<meta name="twitter:description" content="Packages的定义在源文件的顶端声明:123package my.demoimport java.util.* 注意：Kotlin与Java不同，声明package my.demo的文件在Java中必须放在my.demo包下，在Kotlin中可以放在任意包下 Fuctions的定义拥有2个Int参数且返回值为Int的方法:123fun sum(a: Int,b: Int): Int &amp;#123">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/07/hello-kotlin/"/>
+
+
+
+
+
+  <title> Hello, Kotlin! | 没想好 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">没想好</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/07/hello-kotlin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lazytes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/7812842?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="没想好">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hello, Kotlin!
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T00:00:00+08:00">
+                2017-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kotlin/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Packages的定义"><a href="#Packages的定义" class="headerlink" title="Packages的定义"></a>Packages的定义</h3><p>在源文件的顶端声明:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">package my.demo</div><div class="line"></div><div class="line">import java.util.*</div></pre></td></tr></table></figure></p>
+<p><strong>注意：Kotlin与Java不同，声明<code>package my.demo</code>的文件在Java中必须放在<code>my.demo</code>包下，在Kotlin中可以放在任意包下</strong></p>
+<h3 id="Fuctions的定义"><a href="#Fuctions的定义" class="headerlink" title="Fuctions的定义"></a>Fuctions的定义</h3><p>拥有2个Int参数且返回值为Int的方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun sum(a: Int,b: Int): Int &#123;</div><div class="line">    return a+b</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可简写为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fun sum(a: Int,b: Int) = a + b</div></pre></td></tr></table></figure></p>
+<p>此时的返回值类型自动推测为Int<br>拥有2个Int参数且无返回值<strong>(对应Java中的void)</strong>的方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun sum(a: Int,b: Int): Unit &#123;</div><div class="line">    println(&quot;sum of $a and $b is $&#123;a + b&#125;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>Unit</strong> 可以省略:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun sum(a: Int,b: Int) &#123;</div><div class="line">    println(&quot;sum of $a and $b is $&#123;a + b&#125;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="本地变量的定义"><a href="#本地变量的定义" class="headerlink" title="本地变量的定义"></a>本地变量的定义</h3><p>只读变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">val a: Int = 1</div><div class="line">val b = 2       // 此时b的类型根据赋值2自动推测为Int</div><div class="line">val c: Int      // 没有默认值 必须声明变量类型 </div><div class="line">c = 3           // 结合上面一行, 这种写法必须在方法里面，外面会报错哦</div></pre></td></tr></table></figure></p>
+<p>可变变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var x = 5</div><div class="line">x += 1</div></pre></td></tr></table></figure></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>支持Java相同的注释,<strong>Kotlin的注释块(/* */)是可以嵌套的</strong></p>
+<h3 id="使用字符串模板"><a href="#使用字符串模板" class="headerlink" title="使用字符串模板"></a>使用字符串模板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = 1</div><div class="line">val s1 = &quot;a is $a&quot; // 最简单的用法</div><div class="line"></div><div class="line">a = 2</div><div class="line">val s2 = &quot;$&#123;s1.replace(&quot;is&quot;,&quot;was&quot;)&#125;, but now is $a&quot; // 使用表达式</div></pre></td></tr></table></figure>
+<h3 id="使用条件表达式"><a href="#使用条件表达式" class="headerlink" title="使用条件表达式"></a>使用条件表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fun maxOf(a: Int,b: Int): Int &#123;</div><div class="line">    if (a &gt; b)&#123;</div><div class="line">        return a</div><div class="line">    &#125; else &#123;</div><div class="line">        return b</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用<strong>if</strong>表达式后:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fun maxOf(a: Int,b: Int) = if (a &gt; b) a else b</div></pre></td></tr></table></figure></p>
+<h3 id="使用可能为null的值并检查是否为null"><a href="#使用可能为null的值并检查是否为null" class="headerlink" title="使用可能为null的值并检查是否为null"></a>使用可能为null的值并检查是否为null</h3><p>定义一个方法, 如果不能转换成Integer就返回null:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fun parseInt(str: String): Int? &#123;</div><div class="line">    // 官方文档中这里没有写实现方法</div><div class="line">    // 使用自己的判断, 我在接口中看到有现成的就直接用了</div><div class="line">    // 具体使用?可以参考该方法的源码</div><div class="line">    return str.toIntOrNull() </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用这个可能返回null的方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fun printProduction(arg1: String, arg2: String) &#123;</div><div class="line">    val x = parseInt(arg1) // 等价val x = arg1.toIntOrNull()</div><div class="line">    val y = parseInt(arg2) // 等价val y = arg2.toIntOrNull()</div><div class="line">    </div><div class="line">    if (x != null &amp;&amp; y != null) println(x * y)</div><div class="line">    else println(&quot;either ‘$arg1’ or &apos;$arg2&apos; is a number&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="使用类型检查和自动转换"><a href="#使用类型检查和自动转换" class="headerlink" title="使用类型检查和自动转换"></a>使用类型检查和自动转换</h3><p><strong>is</strong>等价Java的<strong>instanceof</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fun getStringLength(obj: Any): Int? &#123;</div><div class="line">    if (obj is String) &#123;</div><div class="line">        return obj.length</div><div class="line">    &#125;</div><div class="line">    return null</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>换种写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fun getStringLength(obj: Any): Int? &#123;</div><div class="line">    if (obj !is String) return null</div><div class="line">    return obj.length</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="使用for循环"><a href="#使用for循环" class="headerlink" title="使用for循环"></a>使用for循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)</div><div class="line">for (item in items) println(item)</div></pre></td></tr></table></figure>
+<p>也可以这么写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)</div><div class="line">for (index in items.indices) println(&quot;item at $index is $&#123;items[index]&#125;&quot;)</div></pre></td></tr></table></figure></p>
+<h3 id="使用while循环"><a href="#使用while循环" class="headerlink" title="使用while循环"></a>使用while循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)</div><div class="line">var index = 0</div><div class="line">while (index &lt; items.size) &#123;</div><div class="line">    println(&quot;item at $index is $&#123;items[index]&#125;&quot;)</div><div class="line">    index++</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="使用when表达式"><a href="#使用when表达式" class="headerlink" title="使用when表达式"></a>使用when表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">fun describe(obj: Any): String =</div><div class="line">when (obj) &#123; // 吐槽: 在这里idea的缩进真难看</div><div class="line">    1           -&gt; &quot;One&quot;</div><div class="line">    &quot;Hello&quot;     -&gt;&quot;Greeting&quot;</div><div class="line">    is Long     -&gt;&quot;Long&quot;</div><div class="line">    !is String  -&gt;&quot;Not a String&quot;</div><div class="line">    else        -&gt;&quot;Unknown&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="使用ranges-不知道怎么翻比较好"><a href="#使用ranges-不知道怎么翻比较好" class="headerlink" title="使用ranges(不知道怎么翻比较好)"></a>使用ranges(不知道怎么翻比较好)</h3><p>使用<strong>in</strong>操作符判断数字是否在一个范围之内:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">val x = 10</div><div class="line">val y = 9</div><div class="line">if (x in 1..y + 1) println(&quot;fit in ranges&quot;) // x在1-10之内就打印</div></pre></td></tr></table></figure></p>
+<p>检查数字是否超出范围:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</div><div class="line">if (-1 !in 0..list.lastIndex) println(&quot;-1 is out of range&quot;)</div><div class="line">if (list.size !in list.indices) &#123;</div><div class="line">    println(&quot;list size is out of valid list indices range too&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>迭代一个范围:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">for (x in 1..5) println(x)</div></pre></td></tr></table></figure></p>
+<p>or over a progression(不知道怎么翻比较好):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 等价 for (int i = 1; i &lt; 11; i += 2) &#123;</div><div class="line"> *          print(i);</div><div class="line"> *      &#125;</div><div class="line"> */</div><div class="line">for (x in 1..10 step 2) print(x) // 从1开始每次增加2直到10</div><div class="line">/**</div><div class="line"> * 等价 for (int i = 9; i &gt; -1; i -= 3) &#123;</div><div class="line"> *          print(x);</div><div class="line"> *      &#125;</div><div class="line"> */</div><div class="line">for (x in 9 downTo 0 step 3) print(x) // 从9开始每次减少3直到0</div></pre></td></tr></table></figure></p>
+<h3 id="使用集合"><a href="#使用集合" class="headerlink" title="使用集合"></a>使用集合</h3><p>迭代一个集合:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)</div><div class="line">for (item in items) println(item)</div></pre></td></tr></table></figure></p>
+<p>判断集合内的对象是否在操作符中使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">when &#123;</div><div class="line">    &quot;orange&quot; in items -&gt; &quot;juicy&quot;</div><div class="line">    &quot;apple&quot;  in items -&gt; &quot;apple is fine too&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用拉姆达表达式并转换集合内的对象:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">fruits</div><div class="line">    // 这里的it应该是和gradle里面一样的隐参</div><div class="line">    // 过滤集合, 条件为所有不是以a开头的全部过滤掉</div><div class="line">    .filter &#123; it.startsWith(&quot;a&quot;) &#125; </div><div class="line">    // 将集合内的对象全部排序</div><div class="line">    // 这里是String, 应该是先按第一个字母排序，再按第二个字母排序</div><div class="line">    .sortedBy &#123; it &#125;</div><div class="line">    // 全部转换为大写(这里的map和RxJava好像)</div><div class="line">    .map &#123; it.toUpperCase() &#125;</div><div class="line">    // 打印出来</div><div class="line">    .forEach &#123; println(it) &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://kotlinlang.org/docs/reference/basic-syntax.html" target="_blank" rel="external">本文翻译的文档</a></li>
+<li><a href="https://github.com/lazytes/HelloKotlin/blob/master/src/BasicSyntax.kt" target="_blank" rel="external">本文对应的代码</a></li>
+<li><a href="http://kotlinlang.org/docs/reference/" target="_blank" rel="external">Kotlin官方文档</a></li>
+<li><a href="https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt" target="_blank" rel="external">Kotlin在线编辑器</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Kotlin/" rel="tag"># Kotlin</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/08/kotlin-idioms/" rel="next" title="Kotlin习惯用语">
+                <i class="fa fa-chevron-left"></i> Kotlin习惯用语
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/18/android-studio-keystore/" rel="prev" title="Android Studio 保存打包签名配置">
+                Android Studio 保存打包签名配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars3.githubusercontent.com/u/7812842?v=3&s=460"
+               alt="lazytes" />
+          <p class="site-author-name" itemprop="name">lazytes</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lazytes" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Packages的定义"><span class="nav-number">1.</span> <span class="nav-text">Packages的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fuctions的定义"><span class="nav-number">2.</span> <span class="nav-text">Fuctions的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地变量的定义"><span class="nav-number">3.</span> <span class="nav-text">本地变量的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">4.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用字符串模板"><span class="nav-number">5.</span> <span class="nav-text">使用字符串模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用条件表达式"><span class="nav-number">6.</span> <span class="nav-text">使用条件表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用可能为null的值并检查是否为null"><span class="nav-number">7.</span> <span class="nav-text">使用可能为null的值并检查是否为null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用类型检查和自动转换"><span class="nav-number">8.</span> <span class="nav-text">使用类型检查和自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用for循环"><span class="nav-number">9.</span> <span class="nav-text">使用for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用while循环"><span class="nav-number">10.</span> <span class="nav-text">使用while循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用when表达式"><span class="nav-number">11.</span> <span class="nav-text">使用when表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用ranges-不知道怎么翻比较好"><span class="nav-number">12.</span> <span class="nav-text">使用ranges(不知道怎么翻比较好)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用集合"><span class="nav-number">13.</span> <span class="nav-text">使用集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">14.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lazytes</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
